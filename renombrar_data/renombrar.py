@@ -9,7 +9,7 @@ new_list = []
 new_list_updated = []
 
 dot = re.compile(r'\.')
-ignoredFileTypes = re.compile(r'(.)\.(py|exe|bat|env)\Z')
+ignoredFileTypes = re.compile(r'.*\.(py|exe|bat|env|git|gitignore)\Z')
 weirdCharacters = re.compile(r'[^A-Za-z0-9\.]')
 numbers = re.compile(r'\d+')
 letterAndSpace = re.compile(r'\D+')
@@ -96,7 +96,7 @@ def startNum(cleanName):
         else:
             startName = startName[0]
     else:
-        print(colorText('red', 'No hay ningun numero en el nombre del archivo'))
+        print(colorText('red', 'No hay ningun numero en el nombre del archivo: '+cleanName))
         startName = input(
             colorText('green', 'Introdusca el numero de este archivo: '))
     startName = int(startName)
@@ -138,7 +138,7 @@ def accept(newNameList, new_list):
 
 
 def rename(newNamesList, new_list):
-    print(len(new_list), len(newNamesList))
+    print(colorText('cian', str(len(newNamesList))+'/'+str(len(new_list))))
     for i in range(len(new_list)):
         os.rename(new_list[i], newNamesList[i])
 
