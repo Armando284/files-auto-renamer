@@ -9,7 +9,7 @@ new_list = []
 new_list_updated = []
 
 dot = re.compile(r'\.')
-ignoredFileTypes = re.compile(r'.*\.(py|exe|bat|env|git|gitignore)\Z')
+ignoredFileTypes = re.compile(r'.*\.(py|exe|bat|env|git|gitignore|md)\Z')
 weirdCharacters = re.compile(r'[^A-Za-z0-9\.]')
 numbers = re.compile(r'\d+')
 letterAndSpace = re.compile(r'\D+')
