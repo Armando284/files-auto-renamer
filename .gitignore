@@ -1,0 +1,6 @@
+# python cache
+__pycache__/*
+*/__pycache__/*
+
+# my test files
+*.txt
